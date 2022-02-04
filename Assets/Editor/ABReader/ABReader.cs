@@ -58,13 +58,12 @@ namespace ABReader
             unzipper.ReadEntriesInArchive(inputPath);
         }
 
-        [MenuItem("ABReader/Copy Zip Archive and Read")]
-        static void ABCopyAndReadFromArchive()
+        [MenuItem("ABReader/JSON Export From Archive")]
+        static void ABJsonFromArchive()
         {
             ABReaderUnzipper unzipper = new();
             string inputPath = EditorUtility.OpenFilePanel("Select Compressed Archive to Read from", "", "");
-            string outputPath = EditorUtility.OpenFolderPanel("Select Destination to Export to", "", "");
-            unzipper.CopyArchiveAndReadFromLocalDisk(inputPath, outputPath);
+            unzipper.ReadEntriesFromArchiveToJson(inputPath);
         }
     }
 }

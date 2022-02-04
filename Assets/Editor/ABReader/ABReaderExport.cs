@@ -6,7 +6,7 @@ namespace ABReader.Export
     [Serializable]
     public class Bundles
     {
-        public List<BundleData> bundles = new List<BundleData>();
+        public List<BundleData> bundles = new();
     }
 
     [Serializable]
@@ -18,5 +18,19 @@ namespace ABReader.Export
         public bool isStreamedSceneBundle;
         public string[] assetNames;
         public string[] scenePaths;
+    }
+
+    [Serializable]
+    public class Archive
+    {
+        public List<Entry> entries = new();
+    }
+
+    [Serializable]
+    public class Entry
+    {
+        public string name;
+        public DateTimeOffset lastWrite;
+        public long compressionLength;
     }
 }
