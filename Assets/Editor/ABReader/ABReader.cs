@@ -1,5 +1,6 @@
 using UnityEditor;
 using ABReader.Logic;
+using ABReader.Export;
 
 namespace ABReader
 {
@@ -11,7 +12,6 @@ namespace ABReader
         static void ABReadFromFolderSync()
         {
             string path = EditorUtility.OpenFolderPanel("Select Asset Bundle Directory to Read from", "", "");
-
             abLogic.ReadBundleFiles(path);
         }
 
@@ -19,7 +19,6 @@ namespace ABReader
         static void ABReadFromFolderASync()
         {
             string path = EditorUtility.OpenFolderPanel("Select Asset Bundle Directory to Read from", "", "");
-
             abLogic.ReadBundleFilesAsync(path);
         }
 
@@ -34,7 +33,6 @@ namespace ABReader
         static void ABReadFromFileSync()
         {
             string path = EditorUtility.OpenFilePanel("Select Asset Bundle File to Read from", "", "");
-
             abLogic.ReadBundleFiles(path);
         }
 
@@ -42,7 +40,6 @@ namespace ABReader
         static void ABReadFromFileASync()
         {
             string path = EditorUtility.OpenFilePanel("Select Asset Bundle File to Read from", "", "");
-
             abLogic.ReadBundleFilesAsync(path);
         }
 
@@ -51,6 +48,23 @@ namespace ABReader
         {
             string path = EditorUtility.OpenFilePanel("Select Asset Bundle File to Read from", "", "");
             abLogic.JsonFromPath(path);
+        }
+
+        [MenuItem("ABReader/Read From Zip Archive")]
+        static void ABReadFromArchive()
+        {
+            ABReaderUnzipper unzipper = new();
+            string inputPath = EditorUtility.OpenFilePanel("Select Compressed Archive to Read from", "", "");
+            unzipper.ReadEntriesInArchive(inputPath);
+        }
+
+        [MenuItem("ABReader/Copy Zip Archive and Read")]
+        static void ABCopyAndReadFromArchive()
+        {
+            ABReaderUnzipper unzipper = new();
+            string inputPath = EditorUtility.OpenFilePanel("Select Compressed Archive to Read from", "", "");
+            string outputPath = EditorUtility.OpenFolderPanel("Select Destination to Export to", "", "");
+            unzipper.CopyArchiveAndReadFromLocalDisk(inputPath, outputPath);
         }
     }
 }
