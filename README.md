@@ -7,6 +7,8 @@ can be used to point at an individual asset bundle or collection by selecting th
 located on disk
 - Export the asset bundle(s) available data into the JSON data structure format
 - Custom debug logging class and methods to provide detailed output for the ABReader system
+- Read asset bundles from within an archive (OBB, APK, ZIP) and also extract them to a local directory
+- Export the asset bundle entry data from an archive (OBB, APK, ZIP)
 
 # Installation
 Installation is simple and you can either opt to install by importing the .unitypackage I have provided in the releases or download, extract and add the source code into the Editor folder on your Unity project.
