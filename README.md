@@ -34,5 +34,5 @@ Using ABReader is nice and simple, all of the methods are called from the toolba
 - Select the zip/archive file where the bundles are compressed to using the pop up file explorer
 
 # Known Issues
-- Cancelling the file explorer popup and not selecting a folder results in: ArgumentException: The specified path is not of a legal form (empty)
-- If the folder contains more than bundle files then the read will throw and error for those file(s): Unable to read header from archive file:<UNKNOWN FILE>
+- Cancelling the file explorer popup and not selecting a folder results in: ArgumentException: The specified path is not of a legal form (empty) https://github.com/spricegd/ABReader/issues/2
+- If the folder contains more than bundle files then the read will throw and error for those file(s): Unable to read header from archive file:<UNKNOWN FILE> https://github.com/spricegd/ABReader/issues/1
