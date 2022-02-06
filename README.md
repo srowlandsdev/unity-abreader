@@ -14,3 +14,25 @@ located on disk
 Installation is simple and you can either opt to install by importing the .unitypackage I have provided in the releases or download, extract and add the source code into the Editor folder on your Unity project.
 
 Once you have installed the tool then refer to the in editor toolbar for a new header called ABReader, click it and the options are presented in a list
+
+# Usage
+Using ABReader is nice and simple, all of the methods are called from the toolbar under "ABReader". From there the options are split into Asset Bundle File,Asset Bundle Folder or Compressed Archive(For zip, obb or apk)
+
+## Asset Bundle Folders
+- Select ABReader >> Asset Bundle Folder
+- Choose from: Read From Folder, Read From Folder Async or JSON Export
+- Select the folder where the bundles are located using the pop up file explorer
+
+## Asset Bundle Files
+- Select ABReader >> Asset Bundle File
+- Choose from: Read From File, Read From File Async or JSON Export
+- Select the bundle file using the pop up file explorer
+
+## Compressed Archives
+- Select ABReader >> Compressed Archive
+- Choose from: Read From Archive or JSON Export
+- Select the zip/archive file where the bundles are compressed to using the pop up file explorer
+
+# Known Issues
+- Cancelling the file explorer popup and not selecting a folder results in: ArgumentException: The specified path is not of a legal form (empty)
+- If the folder contains more than bundle files then the read will throw and error for those file(s): Unable to read header from archive file:<UNKNOWN FILE>
