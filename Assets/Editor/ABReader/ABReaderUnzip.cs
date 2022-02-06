@@ -62,7 +62,7 @@ namespace ABReader.Export
             timer.Reset();
         }
 
-        public void CopyArchiveAndReadFromLocalDisk(string source, string outputPath)
+        public void CopyArchiveToLocalDisk(string source, string outputPath)
         {
             Stopwatch timer = new();
             timer.Start();
