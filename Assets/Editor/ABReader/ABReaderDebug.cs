@@ -10,6 +10,31 @@ namespace ABReader.Debug
             UnityEngine.Debug.Log($"[ABReader] {message}");
         }
 
+        public void LogMessage(string message, Object context)
+        {
+            UnityEngine.Debug.Log($"[ABReader] {message}", context);
+        }
+
+        public void LogWarning(string message)
+        {
+            UnityEngine.Debug.LogWarning($"<color=yellow>[ABReader] {message}!</color>");
+        }
+
+        public void LogWarning(string message, Object context)
+        {
+            UnityEngine.Debug.LogWarning($"<color=yellow>[ABReader] {message}!</color>", context);
+        }
+
+        public void LogError(string message)
+        {
+            UnityEngine.Debug.LogError($"<color=red>[ABReader] {message}!</color>");
+        }
+
+        public void LogError(string message, Object context)
+        {
+            UnityEngine.Debug.LogError($"<color=red>[ABReader] {message}!</color>", context);
+        }
+
         public void LogBundleHashcode(AssetBundle bundle)
         {
             UnityEngine.Debug.Log($"[ABReader] Bundle hashcode:{bundle.GetHashCode()}");

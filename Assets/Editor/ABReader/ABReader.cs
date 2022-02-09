@@ -1,12 +1,13 @@
 using UnityEditor;
 using ABReader.Logic;
 using ABReader.Export;
+using ABReader.Debug;
 
 namespace ABReader
 {
     public class ABReaderTool : Editor
     {
-        static readonly ABReaderLogic abLogic = new();
+        static ABReaderLogic abLogic = new();
 
         #region Folder
         [MenuItem("ABReader/Asset Bundle Folder/Read From Folder")]
