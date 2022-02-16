@@ -64,7 +64,7 @@ namespace ABReader
             unzipper.ReadEntriesInArchive(inputPath);
         }
 
-        [MenuItem("ABReaderCompressed Archive//Extract Archive Data")]
+        [MenuItem("ABReader/Compressed Archive/Extract Archive Data")]
         static void ABExtractAndCopyArchiveData()
         {
             ABReaderUnzipper unzipper = new();
